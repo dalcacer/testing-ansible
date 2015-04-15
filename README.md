@@ -20,5 +20,6 @@ Simple setup to test ansible based on [this tutorial](https://serversforhackers.
 	`[vagrant]
  	192.168.33.10`
  * Start VM `vagrant up`
+ * Connect once via SSH `ssh vagrant@192.168.33.10`
  * Run Playbook `ansible-playbook -s -k -u vagrant nginx.yml`
  * Test [http://192.168.33.10:8080](http://192.168.33.10:8080) or [http://localhost:8080](http://localhost:8080)
