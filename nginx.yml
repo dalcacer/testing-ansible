@@ -13,12 +13,6 @@
      notify:
       - Start Nginx
 
-   - name: Create Web Root
-     when: nginxinstalled|success
-     file: dest={{ docroot }} mode=775 state=directory owner=www-data group=www-data
-     notify:
-      - Reload Nginx
-
   handlers:
    - name: Start Nginx
      service: name=nginx state=started

@@ -10,6 +10,10 @@ Vagrant.configure(2) do |config|
     ansibleserver.vm.provision :shell,
     :inline => 'grep -qs 192.168.250.3 /etc/hosts || echo "192.168.250.3 ansibleclient" >> /etc/hosts'
     ansibleserver.vm.provision :shell, path: "installansible.sh"
+    ansibleserver.vm.provider "virtualbox" do |v|
+        v.memory = 512
+        v.cpus = 2
+    end
   end
 
 
@@ -21,6 +25,10 @@ Vagrant.configure(2) do |config|
     ansibleclient.vm.provision :shell,
     :inline => 'grep -qs 192.168.250.2 /etc/hosts || echo "192.168.250.2 ansbileserver " >> /etc/hosts'
     ansibleclient.vm.provision :shell, path: "prepareclient.sh"
+    ansibleclient.vm.provider "virtualbox" do |v|
+        v.memory = 512
+        v.cpus = 2
+    end
   end
 
 end
