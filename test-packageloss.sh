@@ -7,7 +7,7 @@ function measure() {
 
   for i in {1..5}
   do
-    su ansible -c "(time ansible-playbook -s /vagrant/nginx.yml -i /vagrant/host)" 2>> times
+    su vagrant -c "(time ansible-playbook -T 180 -s /vagrant/nginx.yml -i /vagrant/host)" 2>> times
     sleep 1
   done
 
