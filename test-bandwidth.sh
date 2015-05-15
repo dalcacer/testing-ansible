@@ -11,15 +11,15 @@ function measure() {
   for i in {1..5}
   do
     su vagrant -c "(time ansible-playbook -T 180 -s /vagrant/nginx.yml -i /vagrant/host)" 2>> times
-    sleep 1
+    sleep 5
   done
 
   tc qdisc del dev eth1 root
 }
 
 
-
-for i in 102400 24576 3072 2048 1024 250 40 20
+#for i in 102400 24576 3072 2048 1024 250 40 20
+for i in 2048 1024 250 40 20
   do
     measure $i
   done
