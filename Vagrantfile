@@ -13,6 +13,7 @@ Vagrant.configure(2) do |config|
     ansibleserver.vm.provider "virtualbox" do |v|
         v.memory = 512
         v.cpus = 2
+        v.gui = true
     end
   end
 

@@ -1,0 +1,4 @@
+- hosts: vagrant
+  tasks:
+    - name: Copy the file
+      copy: src=/vagrant/jdom-2.0.6.zip dest=/tmp/jdom-2.0.6.zip 
