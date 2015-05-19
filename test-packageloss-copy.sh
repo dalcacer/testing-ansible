@@ -16,7 +16,7 @@ function measure() {
 
 
 
-for i in {0..40..5}
+for i in {0..30..5}
   do
     measure $i
   done
