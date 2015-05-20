@@ -1,2 +1,6 @@
 .vagrant
 times
+ansible-bandwidth-filecopy.txt
+ansible-packageloss-filecopy.txt
+ansible-packageloss.txt
+ansible-bandwidth.txt

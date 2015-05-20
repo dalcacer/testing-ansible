@@ -1,0 +1,4 @@
+- hosts: vagrant
+  tasks:
+    - name: Delete the file
+      command: rm /tmp/jdom-2.0.6.zip

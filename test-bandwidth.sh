@@ -1,8 +1,9 @@
 #!/bin/bash
-cat /dev/null > times
+cat /dev/null > ansible-bandwidth.txt
+TIME=/usr/bin/time
 
 function measure() {
-  echo "$1 bandwidth" >> times
+  echo "$1 bandwidth" >> ansible-bandwidth.txt
   tc qdisc add dev eth1 handle 1: root htb default 11
   tc class add dev eth1 parent 1: classid 1:1 htb rate $1kbps
   tc class add dev eth1 parent 1:1 classid 1:11 htb rate $1kbps
@@ -10,7 +11,7 @@ function measure() {
 
   for i in {1..5}
   do
-    su vagrant -c "(time ansible-playbook -T 180 -s /vagrant/nginx.yml -i /vagrant/host)" 2>> times
+    su vagrant -c "($TIME -f \"%e\" ansible-playbook -T 180 -s /vagrant/nginx.yml -i /vagrant/host)" 2>> ansible-bandwidth.txt
     sleep 5
   done
 

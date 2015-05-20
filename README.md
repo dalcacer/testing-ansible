@@ -25,3 +25,5 @@ Simple setup to test ansible based on [this tutorial](https://serversforhackers.
  * Run Playbook `ansible-playbook -vvvv -s /vagrant/nginx.yml -i /vagrant/host`
  * Test [http://192.168.33.10:8080](http://192.168.33.10:8080) or [http://localhost:8080](http://localhost:8080)
   * Run Playbook `ansible-playbook -vvvv -s /vagrant/copy.yml -i /vagrant/host`
+
+	* `sudo ./test-bandwidth-copy.sh && sudo ./test-bandwidth.sh && sudo ./test-packageloss-copy.sh && sudo ./test-packageloss.sh`
