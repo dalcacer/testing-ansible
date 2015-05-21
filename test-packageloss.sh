@@ -1,6 +1,6 @@
 #!/bin/bash
 cat /dev/null > ansible-packageloss.txt
-TIME = /usr/bin/time
+TIME=/usr/bin/time
 
 function measure() {
   echo "$1 package loss" >> ansible-packageloss.txt
@@ -8,7 +8,7 @@ function measure() {
 
   for i in {1..5}
   do
-    su vagrant -c "($TIME -f \"%e\" ansible-playbook -T 180 -s /vagrant/copy.yml -i /vagrant/host)" 2>> ansible-packageloss.txt
+    su vagrant -c "($TIME -f \"%e\" ansible-playbook -T 180 -s /vagrant/nginx.yml -i /vagrant/host)" 2>> ansible-packageloss.txt
     sleep 1
   done
 

@@ -1,29 +1,16 @@
-Simple setup to test ansible based on [this tutorial](https://serversforhackers.com/an-ansible-tutorial).
+Simple setup to test ansible and its fitness for a specific project.
 
+Intoduces two machines `ansibleserver`, `ansibleclient` and various playbooks for
+copying files or installing nginx.
 
-#Contains
-* Vagrant
-	* 192.168.33.10
-	* 192.168.33.10:2222 → VM:22
-	* localhost:2222 → VM:22
-	* 192.168.33.10:8080 → VM:80
-	* localhost:8080 → VM:80
-	* SSH - vagrant:vagrant
-
-* Ansible Playbook
-	* TASK to install nginx
-	* HANDLER to start nginx
+Each operation is performed various times under changing network conditions.
 
 # Usage
-* Install `ansible`
-* Alter `/etc/ansible/host`
-	`[vagrant]
- 	192.168.33.10`
- * Start VMs `vagrant up`
+ * `vagrant up`
  * Connect on server `vagrant ssh ansibleserver`
- * Connect on client `vagrant ssh ansibleclient`
- * Run Playbook `ansible-playbook -vvvv -s /vagrant/nginx.yml -i /vagrant/host`
- * Test [http://192.168.33.10:8080](http://192.168.33.10:8080) or [http://localhost:8080](http://localhost:8080)
-  * Run Playbook `ansible-playbook -vvvv -s /vagrant/copy.yml -i /vagrant/host`
+ * Connect **once** to client `ssh ansibleclient`
+ * Run Playbooks manually e.g.  `ansible-playbook -vvvv -s /vagrant/nginx.yml -i /vagrant/host`
+ * Run all predefined tests `sudo ./test-bandwidth-copy.sh && sudo ./test-bandwidth.sh && sudo ./test-packageloss-copy.sh && sudo ./test-packageloss.sh`
 
-	* `sudo ./test-bandwidth-copy.sh && sudo ./test-bandwidth.sh && sudo ./test-packageloss-copy.sh && sudo ./test-packageloss.sh`
+
+ Tests are better run using the VMs gui.
