@@ -1,53 +1,59 @@
 0 package loss
-23.61
-4.99
-6.99
-6.98
-4.99
-5 package loss
-8.80
-5.36
-4.98
-8.36
-7.98
-10 package loss
-10.26
+9.28
 5.99
-8.07
-7.98
-9.98
+5.99
+8.98
+6.99
+5 package loss
+6.99
+10.99
+6.93
+9.03
+6.04
+10 package loss
+10.93
+8.99
+10.35
+8.53
+13.07
 15 package loss
-14.44
-9.90
-7.98
-11.00
-13.13
+14.97
+16.98
+14.97
+16.83
+16.98
 20 package loss
-12.37
-20.97
-15.74
-16.22
-17.99
+15.97
+24.98
+20.93
+22.83
+20.83
 25 package loss
-37.98
-25.98
-22.98
-23.90
-26.02
+24.83
+35.82
+54.96
+33.97
+40.97
 30 package loss
-30.93
-41.06
-48.34
-37.97
-Command exited with non-zero status 3
-60.87
+73.95
+29.97
+41.97
+29.77
+27.17
 35 package loss
 Command exited with non-zero status 3
-51.74
+49.18
+57.78
 Command exited with non-zero status 3
-120.84
-40.37
-46.34
+72.05
+Command exited with non-zero status 3
+51.97
+73.91
+40 package loss
+74.01
+Command exited with non-zero status 3
+51.49
+52.44
 Traceback (most recent call last):
   File "/usr/bin/ansible-playbook", line 269, in <module>
     sys.exit(main(sys.argv[1:]))
@@ -55,12 +61,10 @@ Traceback (most recent call last):
     pb.run()
   File "/usr/lib/python2.7/dist-packages/ansible/playbook/__init__.py", line 263, in run
     if not self._run_play(play):
-  File "/usr/lib/python2.7/dist-packages/ansible/playbook/__init__.py", line 592, in _run_play
-    if not self._run_task(play, task, False):
-  File "/usr/lib/python2.7/dist-packages/ansible/playbook/__init__.py", line 364, in _run_task
-    results = self._run_task_internal(task)
-  File "/usr/lib/python2.7/dist-packages/ansible/playbook/__init__.py", line 323, in _run_task_internal
-    results = runner.run()
+  File "/usr/lib/python2.7/dist-packages/ansible/playbook/__init__.py", line 512, in _run_play
+    self._do_setup_step(play)
+  File "/usr/lib/python2.7/dist-packages/ansible/playbook/__init__.py", line 459, in _do_setup_step
+    accelerate=play.accelerate, accelerate_port=play.accelerate_port,
   File "/usr/lib/python2.7/dist-packages/ansible/runner/__init__.py", line 992, in run
     results = [ self._executor(h, None) for h in hosts ]
   File "/usr/lib/python2.7/dist-packages/ansible/runner/__init__.py", line 394, in _executor
@@ -83,4 +87,4 @@ Traceback (most recent call last):
     d = self.conn.recv(header_len - len(data))
 KeyboardInterrupt
 Command exited with non-zero status 1
-68.55
+49.40
